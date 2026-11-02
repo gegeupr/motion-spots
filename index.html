@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Spots - onde treinar em Ponta Grossa</title>
+<meta name="description" content="Mapa de pontos de treino ao ar livre em Ponta Grossa, com rota a pé calculada pelo Amazon Location Service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="panel" id="panel">
+    <header class="brand">
+      <div class="logo">MOTION<b>SPOTS</b></div>
+      <p>Onde treinar ao ar livre em Ponta Grossa</p>
+    </header>
+
+    <section class="block">
+      <h2>Ponto de partida</h2>
+      <div class="origin" id="originLabel">Centro da cidade (padrão)</div>
+      <form class="addr" id="addrForm">
+        <input id="addr" type="search" placeholder="Digite um endereço ou bairro" autocomplete="off" aria-label="Endereço de partida">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="row">
+        <button class="ghost" id="btnGeo" type="button">Usar minha localização</button>
+        <button class="ghost" id="btnPick" type="button">Escolher no mapa</button>
+      </div>
+      <p class="hint" id="hint" hidden></p>
+    </section>
+
+    <section class="block">
+      <h2>Tipos de lugar</h2>
+      <div class="chips" id="chips"></div>
+      <input id="q" type="search" placeholder="Filtrar por nome" aria-label="Filtrar por nome">
+    </section>
+
+    <section class="block card" id="card" hidden></section>
+
+    <section class="block grow">
+      <h2>Mais perto de você <span id="count"></span></h2>
+      <ul class="list" id="list"></ul>
+    </section>
+
+    <footer class="foot">
+      Dados: © colaboradores do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> (ODbL).
+      Mapa e rotas: Amazon Location Service. As sugestões de treino são genéricas.
+    </footer>
+  </aside>
+  <main class="mapwrap">
+    <div id="map" role="application" aria-label="Mapa dos pontos de treino"></div>
+    <div class="banner" id="banner" hidden></div>
+  </main>
+</div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
