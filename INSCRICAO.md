@@ -19,7 +19,7 @@ Find the closest training spots, compare walking times, and open a spot to get a
 https://motion-spots.vercel.app
 
 ## Code
-(link do repositório público, se publicar)
+https://github.com/gegeupr/motion-spots
 
 ## Demo video (under 3 minutes) - roteiro
 1. 0:00 Open the map and show the clusters over Ponta Grossa.
